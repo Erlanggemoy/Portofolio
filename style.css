@@ -3,42 +3,55 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: whitesmoke;
+    line-height: 1.6;
 }
 
+/* HEADER RESPONSIF */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 25px 40px;
+    align-items: center;
+    padding: 20px 5%;
     font-size: 14px;
+    flex-wrap: wrap;
 }
 
 header .logo {
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav a {
-    margin-left: 20px;
     text-decoration: none;
     color: #000;
+    white-space: nowrap;
 }
 
 .menu-icon {
-    display: inline-block;
+    display: none;
     margin-left: 20px;
     cursor: pointer;
 }
 
+/* MAIN CONTENT */
 .center {
     text-align: center;
-    width: 60%;
-    margin: auto;
-    margin-top: 40px;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
     line-height: 1.7;
 }
 
 .avatar {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     object-fit: cover;
     filter: grayscale(100%);
@@ -49,6 +62,7 @@ nav a {
     font-size: 20px;
     cursor: pointer;
     color: #000;
+    text-decoration: none;
 }
 
 h3 {
@@ -57,67 +71,84 @@ h3 {
 
 /* PORTOFOLIO PAGE */
 .portfolio-container {
-    width: 70%;
-    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
 
 .card {
     border: 1px solid #eee;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: whitesmoke;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .card img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
- /* Project Page Specific Styles */
+/* PROJECT PAGE SPECIFIC STYLES */
 .project-header {
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #eee;
 }
 
 .project-title {
-    font-size: 28px;
+    font-size: clamp(24px, 5vw, 32px);
     margin-bottom: 15px;
+    line-height: 1.3;
 }
 
 .project-subtitle {
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     color: #666;
     max-width: 700px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .project-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 40px;
+    gap: 30px;
     margin-top: 40px;
 }
 
+/* CAROUSEL RESPONSIF */
 .carousel-container {
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #eee;
     background-color: #f9f9f9;
+    height: clamp(300px, 50vw, 500px);
 }
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
-    height: 500px; /* Tinggi tetap untuk portrait orientation */
+    height: 100%;
 }
 
 .carousel-item {
@@ -126,23 +157,26 @@ h3 {
     align-items: center;
     justify-content: center;
     background-color: #f9f9f9;
+    padding: 10px;
 }
 
 .carousel-image {
     width: auto;
-    height: 100%;
+    height: auto;
     max-width: 100%;
-    object-fit: contain; /* Menjaga aspect ratio */
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .carousel-controls {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    z-index: 5;
 }
 
 .carousel-dot {
@@ -165,15 +199,15 @@ h3 {
     background-color: rgba(0,0,0,0.7);
     color: white;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 8vw, 45px);
+    height: clamp(35px, 8vw, 45px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 18px;
+    font-size: clamp(16px, 3vw, 18px);
     z-index: 10;
 }
 
@@ -182,24 +216,26 @@ h3 {
 }
 
 .carousel-prev {
-    left: 15px;
+    left: 10px;
 }
 
 .carousel-next {
-    right: 15px;
+    right: 10px;
 }
 
+/* PROJECT DETAILS */
 .project-details {
     border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 5px;
+    padding: clamp(15px, 3vw, 25px);
+    border-radius: 8px;
+    background: white;
 }
 
 .project-details h2 {
     margin-top: 0;
-    font-size: 22px;
+    font-size: clamp(20px, 4vw, 24px);
     border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .project-info {
@@ -209,15 +245,17 @@ h3 {
 .project-info h3 {
     margin-top: 20px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: clamp(16px, 3vw, 18px);
 }
 
 .project-info ul {
     padding-left: 20px;
+    margin: 10px 0;
 }
 
 .project-info li {
     margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 .tech-stack {
@@ -229,12 +267,14 @@ h3 {
 
 .tech-item {
     background-color: #f5f5f5;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 15px;
-    font-size: 13px;
+    font-size: 12px;
     border: 1px solid #eee;
+    white-space: nowrap;
 }
 
+/* VIDEO SECTION */
 .video-section {
     margin-top: 30px;
 }
@@ -244,7 +284,7 @@ h3 {
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-top: 15px;
     border: 1px solid #eee;
 }
@@ -258,10 +298,12 @@ h3 {
     border: none;
 }
 
+/* BACK BUTTON */
 .back-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 20px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     background-color: #f5f5f5;
     border: 1px solid #eee;
     border-radius: 5px;
@@ -269,51 +311,51 @@ h3 {
     color: #333;
     transition: all 0.3s;
     font-size: 14px;
+    gap: 8px;
 }
 
 .back-button:hover {
     background-color: #eee;
+    transform: translateX(-5px);
 }
 
-/* Project Card Clickable */
-.card {
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Fullscreen Modal untuk gambar */
+/* FULLSCREEN MODAL */
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.95);
+    padding: 0;
 }
 
 .modal-content {
     margin: auto;
     display: block;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
 }
 
 .close-modal {
     position: absolute;
-    top: 15px;
-    right: 35px;
+    top: 20px;
+    right: 30px;
     color: #fff;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 1001;
+    background: rgba(0,0,0,0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-nav {
@@ -332,15 +374,8 @@ h3 {
     cursor: pointer;
     font-size: 24px;
     transition: background-color 0.3s;
+    z-index: 1001;
 }
-
-footer {
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid #eee;
-            font-size: 14px;
-        }
 
 .modal-nav:hover {
     background-color: rgba(255,255,255,0.4);
@@ -354,13 +389,77 @@ footer {
     right: 20px;
 }
 
-@media (max-width: 768px) {
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+
+footer .social {
+    margin: 20px 0;
+}
+
+footer .social a {
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 1024px) {
     .project-content {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
     
-    .carousel {
-        height: 400px;
+    .portfolio-container {
+        width: 95%;
+        margin: 30px auto;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+        font-size: 13px;
+    }
+    
+    .center {
+        width: 95%;
+        margin: 30px auto;
+    }
+    
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .carousel-container {
+        height: 350px;
     }
     
     .carousel-nav {
@@ -368,5 +467,209 @@ footer {
         height: 35px;
         font-size: 16px;
     }
+    
+    .carousel-prev {
+        left: 8px;
+    }
+    
+    .carousel-next {
+        right: 8px;
+    }
+    
+    .project-details {
+        padding: 15px;
+    }
+    
+    .tech-stack {
+        justify-content: center;
+    }
+    
+    .modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .close-modal {
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+        width: 35px;
+        height: 35px;
+    }
 }
-        
+
+/* Mobile Small */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 4%;
+    }
+    
+    nav {
+        gap: 8px;
+    }
+    
+    nav a {
+        font-size: 12px;
+        margin: 0 6px;
+    }
+    
+    .portfolio-container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .card img {
+        height: 180px;
+    }
+    
+    .carousel-container {
+        height: 280px;
+    }
+    
+    .carousel-controls {
+        bottom: 10px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .carousel-nav {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .project-header {
+        padding: 20px 0;
+    }
+    
+    .project-title {
+        font-size: 22px;
+    }
+    
+    .project-subtitle {
+        font-size: 14px;
+    }
+    
+    .project-content {
+        margin-top: 25px;
+        gap: 20px;
+    }
+    
+    .back-button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
+    footer {
+        padding: 30px 15px;
+        margin-top: 40px;
+    }
+    
+    footer .social a {
+        margin: 0 8px;
+        font-size: 16px;
+    }
+    
+    .modal-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .modal-prev {
+        left: 10px;
+    }
+    
+    .modal-next {
+        right: 10px;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 25px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Very Small Devices */
+@media (max-width: 320px) {
+    .carousel-container {
+        height: 220px;
+    }
+    
+    .project-details {
+        padding: 12px;
+    }
+    
+    .tech-item {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+    
+    nav a {
+        font-size: 11px;
+        margin: 0 4px;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .carousel-container {
+        height: 250px;
+    }
+    
+    .project-header {
+        padding: 20px 0;
+    }
+    
+    .portfolio-container {
+        margin: 20px auto;
+    }
+}
+
+/* High Resolution Displays */
+@media (min-width: 1400px) {
+    .portfolio-container {
+        max-width: 1300px;
+    }
+    
+    .project-content {
+        gap: 50px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .carousel-nav,
+    .carousel-controls,
+    .back-button,
+    footer .social {
+        display: none !important;
+    }
+    
+    .carousel-container {
+        height: auto;
+        break-inside: avoid;
+    }
+    
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+}
