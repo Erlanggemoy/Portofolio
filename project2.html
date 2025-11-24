@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Early Warning System - Bintang Endra Erlangga</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for high-resolution images */
+        .carousel-item {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #f9f9f9;
+        }
+        
+        /* Ensure proper display for portrait orientation images */
+        .carousel-container {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">BINTANG ERLANGGA</div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="portofoliopage.html">PORTFOLIO</a>
+            <a href="https://github.com/Erlanggemoy" target="_blank">GITHUB</a>
+            <a href="https://linkedin.com/in/bintangerlangga47" target="_blank">LINKEDIN</a>
+        </nav>
+    </header>
+
+    <!-- Project Content -->
+    <div class="portfolio-container">
+        <!-- Back Button -->
+        <a href="portofoliopage.html" class="back-button">← Back to Portfolio</a>
+
+        <!-- Project Header -->
+        <div class="project-header">
+            <h1 class="project-title">Flood Early Warning System</h1>
+            <p class="project-subtitle">An Internet of Things project to help government and local people near river</p>
+        </div>
+
+        <div class="project-content">
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Carousel -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-item" style="background-image: url('Media_Project2/prototype1.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('Media_Project2/prototype2.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('Media_Project2/prototype3.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('Media_Project2/pemerintah1.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('Media_Project2/pemerintahemail1.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('Media_Project2/pemerintahemail2.jpg');"></div>
+                        <div class="carousel-item" style="background-image: url('Media_Project2/pemerintahnotif1.jpg');"></div>
+                        
+                    </div>
+                    <button class="carousel-nav carousel-prev">&#10094;</button>
+                    <button class="carousel-nav carousel-next">&#10095;</button>
+                    <div class="carousel-controls">
+                        <div class="carousel-dot active"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                    </div>
+                </div>
+
+                <!-- Project Description -->
+                <div class="project-details" style="margin-top: 30px;">
+                    <h2>Project Overview</h2>
+                    <div class="project-info">
+                        <p>This Computer Network project involves wiring and programming two modules that monitor the height level of the river. Using rainfall sensor to monitors rain and Ultrasonic sensors to monitors river level. The ESP32 controlled and acquired data from sensors and upload it to the MQTT broker, therefore the data could be shown to the website and send alert to government and local people.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Infrared sensor array for line detection</li>
+                            <li>Pulse width modulation driver for speed control</li>
+                            <li>Analog signal conditioning for sensor data</li>
+                            <li>Compact and efficient chassis design</li>
+                        </ul>
+                        
+                        <h3>Technical Implementation</h3>
+                        <p>We designed each circuit with KiCAD Schematic & Board Design tools. The robot uses an array of 6 IR sensors to detect the line position. The analog signals from sensors are processed through comparators and fed into the control system. A Comparator to compare which is black which is white and counter to indicate laps.</p>
+                        
+                        <h3>Challenges & Solutions</h3>
+                        <p>One major challenge was dealing with different lighting conditions affecting IR sensor readings. This was solved by implementing ambient light compensation and proper sensor calibration.</p>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-item">Internet of Things</span>
+                            <span class="tech-item">Computer Networking</span>
+                            <span class="tech-item">MQTT</span>
+                            <span class="tech-item">ESP32 Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="project-details">
+                    <h2>Project Details</h2>
+                    <div class="project-info">
+                        <h3>Timeline</h3>
+                        <p>September 2024 - December 2024</p>
+                        
+                        <h3>Team</h3>
+                        <p>Bintang Endra Erlangga (Web Programming)<br>
+                        Kharizal Firdaus (ESP Program & Wiring)<br>
+                        Julfan Bagas (Assembly, Testing & Debugging)</p>
+
+                        <h3>Repository</h3>
+                        <p><a href="https://github.com/kharizal02/Sistem-Early-Warning-Banjir.git">GitHub</a></p>
+                        
+                        <h3>Documentation</h3>
+                        <p><a href="Media_Project2/Sistem Early Warning Banjir.pdf" target="_blank">Project Report (PDF)</a></p>
+                        
+                        <h3>Components Used</h3>
+                        <ul>
+                            <li>Rainfall Sensor</li>
+                            <li>ESP 32</li>
+                            <li>HCSR-02 Ultrasonic Sensor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="project-details video-section">
+                    <h2>Project Video</h2>
+                    <div class="video-container">
+                        <iframe src="Media_Project2/video.mp4" title="Flood Early Warning System Demonstration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social">
+            <a href="https://github.com/Erlanggemoy" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/bintangerlangga47" target="_blank">LinkedIn</a>
+            <a href="mailto:bintangerlangga07@gmail.com">Email</a>
+        </div>
+        <p>&copy; 2023 Bintang Endra Erlangga. All Rights Reserved.</p>
+        <p>Drop me a message at bintangerlangga47 [at] windowslive [dot] com</p>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const items = document.querySelectorAll('.carousel-item');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            
+            let currentIndex = 0;
+            const totalItems = items.length;
+            
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update active dot
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                updateCarousel();
+            }
+            
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                updateCarousel();
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            // Auto slide (optional) - disabled for better user experience with high-res images
+            // setInterval(nextSlide, 5000);
+
+            // Preload images for better performance
+            function preloadImages() {
+                const imageUrls = [
+                    'Media_Project1/tampaksampingdepankanan.jpg',
+                    'Media_Project1/tampakbelakang.jpg',
+                    'Media_Project1/tampakatas.jpg',
+                    'Media_Project1/tampaksampingkiri.jpg'
+                ];
+                
+                imageUrls.forEach(url => {
+                    const img = new Image();
+                    img.src = url;
+                });
+            }
+            
+            // Start preloading images
+            preloadImages();
+        });
+    </script>
+</body>
+</html>
